@@ -84,6 +84,9 @@ export function Footer() {
   return (
     <footer className="footer">
       <span>© {new Date().getFullYear()} outaflow</span>
+      <Link to="/" className="footer-logo" aria-label="outaflow home">
+        <Logo />
+      </Link>
       <span>Move in your own direction.</span>
     </footer>
   );

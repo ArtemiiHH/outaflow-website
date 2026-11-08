@@ -273,14 +273,43 @@ button:active:not(:disabled) {
   transform: translateX(-50%);
 }
 .footer {
+  align-items: center;
   margin: 0 3.5%;
   border-top: 1px solid var(--line);
-  padding: 25px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   gap: 16px;
   font-size: 10px;
   color: var(--muted);
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 70px;
+  width: 70px;
+  height: auto;
+}
+.footer-logo .logo {
+  width: 70px;
+  height: auto;
+}
+.footer > span {
+  flex: 1;
+}
+.footer > span:last-child {
+  text-align: right;
+}
+@media (max-width: 480px) {
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-logo {
+    order: -1;
+    flex-basis: 100%;
+  }
 }
 .collection-banner {
   height: clamp(240px, 27vw, 420px);
