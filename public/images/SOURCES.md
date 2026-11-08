@@ -9,3 +9,8 @@ These photographs are illustrative placeholders; they are not supplied outaflow 
 - trousers.jpg: https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=900&q=85&fit=crop
 - jacket.jpg: https://images.unsplash.com/photo-1551028719-00167b16eac5?w=900&q=85&fit=crop
 - outaflow-logo.png: supplied reference/outaflow-logo.png, unchanged.
+
+Current sample catalog imagery (supplied by the user for all shop items):
+- jacket-front.png: reference/jacket-front.png, copied unchanged; default preview.
+- jacket-back.png: reference/jacket-back.png, copied unchanged; hover and second gallery view.
+These reference-branded photographs remain sample imagery, not outaflow product claims.

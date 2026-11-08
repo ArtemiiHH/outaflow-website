@@ -129,7 +129,7 @@ Controls are square and image frames remain rectangular. Selected sizes invert t
 - **Email field:** transparent field and arrow submission share a single bottom rule; explicit consent sits below. Loading, error, unavailable configuration, and success states remain textual and truthful.
 - **Size selector:** six equal columns with the size gap; selected, disabled and unselected states are distinct. Unavailable sizes are struck through.
 - **Navigation:** three-part desktop header, central compact navigation, wordmark left and emblem right. Mobile preserves the shop link when available and hides the inactive tagline.
-- **Product card:** frameless imagery above compact metadata; hover scales imagery to (1.035) over (0.55s) with `cubic-bezier(0.16, 1, 0.3, 1)`. A paper action strip appears on hover and keyboard focus; it is hidden on mobile.
+- **Product card:** frameless imagery above compact metadata; the supplied front image is the default; hover or keyboard focus reveals the back view with a 0.25s opacity transition. White, contain-fit surfaces preserve the complete garment. A paper action strip appears on hover and keyboard focus; it is hidden on mobile.
 - **Expandable details:** thin horizontal rules, uppercase summary, plus/minus indicators, and quiet body text.
 - **Opening emblem:** the supplied image makes one complete vertical-axis rotation every (13s), linear and continuous. Reduced-motion disables animations and transitions globally.
 
@@ -141,6 +141,10 @@ Controls are square and image frames remain rectangular. Selected sizes invert t
 - Do retain visible keyboard focus and reduced-motion support.
 
 ### Don't:
-- Don't copy Mertra branding or product artwork.
+- The user explicitly supplied reference-branded jacket front/back photos for every sample item. Keep them labeled as sample imagery; do not represent them as original outaflow products.
 - Don't present illustrative development photography as real outaflow products.
 - Don't introduce raised cards or rounded purchase controls into the current flat system.
+
+## Compact storefront header
+
+The header now follows the user's supplied narrow navigation reference: 48px navigation row, wordmark left, centered HOME/SHOP links without dropdowns, and a 44px basket control right. A 28px announcement strip repeats “NEW DROP ONLINE NOW” during active drops and “NEXT DROP COMING SOON” between releases. Two identical groups translate by half their combined width over 65 seconds for a seamless loop. Hover pauses the strip and reduced-motion disables it. The basket opens a native, dismissible empty-cart popover; purchases still use the existing direct Shopify checkout flow.

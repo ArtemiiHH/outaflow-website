@@ -37,7 +37,7 @@ Vite serves only the frontend; run `vercel dev` or use your provider's function 
 
 ## Assets
 
-Supplied logo: `reference/outaflow-logo.png`, copied intact. CSS lifts its gray background for blending while preserving the actual logo geometry. Layout references are not shipped as store artwork. `public/images/landscape.jpg` and sample product photos are stock placeholders from Unsplash; replace with owned brand photography before launching. Origins are recorded in `public/images/SOURCES.md`. Manrope is self-hosted under its included SIL OFL license.
+Supplied logo: `reference/outaflow-logo.png`, copied intact. CSS lifts its gray background for blending while preserving the actual logo geometry. Layout references are not shipped as store artwork. `public/images/landscape.jpg` is a stock placeholder from Unsplash. All sample products now use the user-supplied jacket front/back photos; front is the preview and back appears on hover or keyboard focus. Both images are available in every product gallery. Replace sample imagery with owned brand photography before launching. Origins are recorded in `public/images/SOURCES.md`. Manrope is self-hosted under its included SIL OFL license.
 
 No real launch date, real catalog, private credentials or subscription provider settings were supplied. Those remain intentional configuration tasks.
 

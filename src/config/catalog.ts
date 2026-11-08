@@ -17,7 +17,6 @@ const product = (
   name: string,
   color: string,
   price: number,
-  image: string,
 ): Product => ({
   slug,
   name,
@@ -26,17 +25,13 @@ const product = (
   currency: "EUR",
   images: [
     {
-      src: `/images/${image}.jpg`,
-      alt: `Illustrative ${color.toLowerCase()} ${name.toLowerCase()} product photograph`,
+      src: "/images/jacket-front.png",
+      alt: "Front view of the supplied blue patterned jacket, sample imagery",
     },
-    ...(image === "hoodie"
-      ? [
-          {
-            src: "/images/hoodie-detail.jpg",
-            alt: "Closer crop of the illustrative hoodie photograph",
-          },
-        ]
-      : []),
+    {
+      src: "/images/jacket-back.png",
+      alt: "Back view of the supplied blue patterned jacket, sample imagery",
+    },
   ],
   description:
     "An everyday silhouette, with room to move. This is a sample product for storefront preview; final materials, fit and imagery will be confirmed before release.",
@@ -66,8 +61,8 @@ const product = (
   sample: true,
 });
 export const catalog: Product[] = [
-  product("form-hoodie", "Form hoodie", "Washed black", 110, "hoodie"),
-  product("everyday-tee", "Everyday tee", "Chalk", 45, "tee"),
-  product("wide-leg-trouser", "Wide leg trouser", "Graphite", 95, "trousers"),
-  product("field-jacket", "Field jacket", "Black", 165, "jacket"),
+  product("form-hoodie", "Form hoodie", "Washed black", 110),
+  product("everyday-tee", "Everyday tee", "Chalk", 45),
+  product("wide-leg-trouser", "Wide leg trouser", "Graphite", 95),
+  product("field-jacket", "Field jacket", "Black", 165),
 ];

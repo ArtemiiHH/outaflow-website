@@ -131,7 +131,7 @@
       {
         "name": "image-hover",
         "value": "0.55s cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Product photograph scale transition."
+        "purpose": "Front-to-back product photograph opacity transition."
       }
     ],
     "breakpoints": [
@@ -213,7 +213,7 @@
       "Do retain visible keyboard focus and reduced-motion support."
     ],
     "donts": [
-      "Don't copy Mertra branding or product artwork.",
+      "Keep user-supplied reference-branded jacket photos labeled as sample imagery.",
       "Don't present illustrative development photography as real outaflow products.",
       "Don't introduce raised cards or rounded purchase controls into the current flat system."
     ]

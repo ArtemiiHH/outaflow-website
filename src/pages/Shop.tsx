@@ -81,10 +81,20 @@ export default function Shop() {
                   >
                     <div className="product-image">
                       <img
+                        className="product-image-front"
                         src={p.images[0].src}
                         alt={p.images[0].alt}
                         loading="lazy"
                       />
+                      {p.images[1] && (
+                        <img
+                          className="product-image-back"
+                          src={p.images[1].src}
+                          alt=""
+                          aria-hidden="true"
+                          loading="lazy"
+                        />
+                      )}
                       <span className="view-product">
                         View piece <ArrowUpRight size={17} />
                       </span>

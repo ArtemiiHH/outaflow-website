@@ -29,6 +29,39 @@ for (const viewport of [
     await page.screenshot({ path: `${review}/${device}.png`, fullPage: true });
     await page.goto("http://127.0.0.1:4174/shop");
     await expect(page.locator(".product-card")).toHaveCount(4);
+    await expect(page.locator(".header")).toHaveCSS("height", "48px");
+    await expect(
+      page
+        .getByRole("navigation")
+        .getByRole("link", { name: "HOME", exact: true }),
+    ).toBeVisible();
+    await expect(
+      page
+        .getByRole("navigation")
+        .getByRole("link", { name: "SHOP", exact: true }),
+    ).toBeVisible();
+    await page.getByRole("button", { name: "Open cart" }).click();
+    await expect(page.getByText("Your cart is empty.")).toBeVisible();
+    await page.getByRole("button", { name: "Close cart" }).click();
+    await expect(page.locator("#header-cart")).not.toBeVisible();
+    await expect(page.locator(".product-image-front").first()).toHaveAttribute(
+      "src",
+      "/images/jacket-front.png",
+    );
+    await expect(page.locator(".product-image-back").first()).toHaveAttribute(
+      "src",
+      "/images/jacket-back.png",
+    );
+    await expect(page.locator(".product-image-back").first()).toHaveCSS(
+      "opacity",
+      "0",
+    );
+    await page.locator(".product-card").first().hover();
+    await expect(page.locator(".product-image-back").first()).toHaveCSS(
+      "opacity",
+      "1",
+    );
+    await page.mouse.move(0, 0);
     await page.evaluate(() => document.fonts.ready);
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.screenshot({
@@ -51,7 +84,7 @@ for (const viewport of [
       .click();
     await expect(page.locator(".main-product-image img")).toHaveAttribute(
       "src",
-      "/images/hoodie-detail.jpg",
+      "/images/jacket-back.png",
     );
     await page.getByText("Product details", { exact: true }).click();
     await expect(page.locator("details").first()).toHaveAttribute("open", "");

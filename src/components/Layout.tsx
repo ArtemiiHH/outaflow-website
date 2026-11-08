@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { Link, NavLink } from "react-router-dom";
+import { Basket, X } from "@phosphor-icons/react";
 import { Store } from "../Store";
 export function Logo({ className = "" }: { className?: string }) {
   return (
@@ -15,24 +15,69 @@ export function Logo({ className = "" }: { className?: string }) {
 }
 export function Header({ opening = false }: { opening?: boolean }) {
   const { drop } = useContext(Store);
+  const announcement = drop ? "NEW DROP ONLINE NOW" : "NEXT DROP COMING SOON";
   return (
-    <header className={`header ${opening ? "header-opening" : ""}`}>
-      <Link to="/" aria-label="outaflow home" className="wordmark">
-        outaflow
-      </Link>
-      <nav aria-label="Main navigation">
-        {drop ? (
-          <Link to="/shop">
-            Shop all <ArrowUpRight size={13} />
+    <>
+      <div className="drop-announcement" aria-label={announcement}>
+        <div className="announcement-track" aria-hidden="true">
+          {[0, 1].map((group) => (
+            <div className="announcement-group" key={group}>
+              {Array.from({ length: 6 }, (_, i) => (
+                <span key={i}>{announcement}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <header className={`header ${opening ? "header-opening" : ""}`}>
+        <Link to="/" aria-label="outaflow home" className="wordmark">
+          outaflow
+        </Link>
+        <nav aria-label="Main navigation">
+          <NavLink to="/" end>
+            HOME
+          </NavLink>
+          <NavLink to="/shop">SHOP</NavLink>
+        </nav>
+        <button
+          className="cart-button"
+          popoverTarget="header-cart"
+          aria-label="Open cart"
+        >
+          <Basket size={22} weight="regular" />
+        </button>
+      </header>
+      <div id="header-cart" className="cart-popover" popover="auto">
+        <div className="cart-heading">
+          <h2>Your cart</h2>
+          <button
+            className="cart-button"
+            popoverTarget="header-cart"
+            popoverTargetAction="hide"
+            aria-label="Close cart"
+          >
+            <X size={20} />
+          </button>
+        </div>
+        <p>Your cart is empty.</p>
+        <p className="cart-help">
+          {drop
+            ? "Choose a piece and use Buy now to check out directly."
+            : "The next drop is coming soon."}
+        </p>
+        {drop && (
+          <Link
+            className="text-button"
+            to="/shop"
+            onClick={() =>
+              document.getElementById("header-cart")?.hidePopover()
+            }
+          >
+            Explore the drop
           </Link>
-        ) : (
-          <span>Independent by nature.</span>
         )}
-      </nav>
-      <Link to="/" className="header-symbol" aria-label="outaflow home">
-        <Logo />
-      </Link>
-    </header>
+      </div>
+    </>
   );
 }
 export function Footer() {
