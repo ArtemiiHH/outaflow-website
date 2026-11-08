@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T17:41:23.677267+00:00",
+  "title": "Design System: outaflow",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0 120)",
+          "oklch(26% 0 120)",
+          "oklch(38% 0 120)",
+          "oklch(49% 0 120)",
+          "oklch(61% 0 120)",
+          "oklch(72% 0 120)",
+          "oklch(84% 0 120)",
+          "oklch(95% 0 120)"
+        ]
+      },
+      "image-surface": {
+        "role": "neutral",
+        "displayName": "Image surface",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Action hover",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(26% 0.005 120)",
+          "oklch(38% 0.005 120)",
+          "oklch(49% 0.005 120)",
+          "oklch(61% 0.005 120)",
+          "oklch(72% 0.005 120)",
+          "oklch(84% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Opening display",
+        "purpose": "Opening Soon heading."
+      },
+      "title": {
+        "displayName": "Product title",
+        "purpose": "Uppercase product heading."
+      },
+      "body": {
+        "displayName": "Description",
+        "purpose": "Product descriptions and expandable details."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Purchase action typography."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "emblem-turn",
+        "value": "13s linear infinite",
+        "purpose": "One full rotateY turn; disabled for reduced motion."
+      },
+      {
+        "name": "image-hover",
+        "value": "0.55s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Product photograph scale transition."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-max",
+        "value": "1023px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Purchase action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Full-width purchase control; disabled until checkout is available.",
+      "html": "<button class=\"ds-buy\">BUY NOW <span aria-hidden=\"true\">\u2197</span></button>",
+      "css": ".ds-buy{font-family:Manrope,Arial,sans-serif;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:52px;border:0;border-radius:0;background:var(--ink,#191a19);color:#fff;padding:17px 20px;font-size:11px;font-weight:600;letter-spacing:.04em;cursor:pointer}.ds-buy:hover:not(:disabled){background:#383f37}.ds-buy:disabled{background:#dfe1db;color:#62665e}.ds-buy:active:not(:disabled){transform:translateY(1px)}.ds-buy:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Underlined retry action.",
+      "html": "<button class=\"ds-text\">Try again</button>",
+      "css": ".ds-text{font-family:Manrope,Arial,sans-serif;font-size:12px;text-decoration:underline;text-underline-offset:4px;padding:10px 0;border:0;border-radius:0;background:none;color:var(--ink,#191a19);cursor:pointer}.ds-text:hover{text-decoration-thickness:2px}.ds-text:active{transform:translateY(1px)}.ds-text:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Size option",
+      "kind": "button",
+      "refersTo": "size-option",
+      "description": "Unselected, selected and unavailable sizes.",
+      "html": "<button class=\"ds-size\" aria-pressed=\"false\">M</button> <button class=\"ds-size\" aria-pressed=\"true\">L</button> <button class=\"ds-size\" disabled>XL</button>",
+      "css": ".ds-size{font-family:Manrope,Arial,sans-serif;width:48px;height:42px;border:1px solid var(--line,#d8dad5);border-radius:0;background:transparent;color:var(--ink,#191a19);font-size:11px;cursor:pointer}.ds-size:hover:not(:disabled){border-color:var(--ink,#191a19)}.ds-size[aria-pressed=\"true\"]{background:var(--ink,#191a19);border-color:var(--ink,#191a19);color:#fff}.ds-size:disabled{color:#888c83;background:#eceee9;text-decoration:line-through}.ds-size:active:not(:disabled){transform:translateY(1px)}.ds-size:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Email input",
+      "kind": "input",
+      "refersTo": "email-input",
+      "description": "Underlined signup field and arrow control; consent and status belong beneath it.",
+      "html": "<label class=\"ds-email-label\" for=\"ds-email\">Get the first word.</label><div class=\"ds-email-row\"><input id=\"ds-email\" type=\"email\" placeholder=\"Your email address\"><button aria-label=\"Sign up for drop updates\">\u2197</button></div>",
+      "css": ".ds-email-label{font-family:Manrope,Arial,sans-serif;display:block;font-size:11px;font-weight:700;margin-bottom:10px}.ds-email-row{display:flex;border-bottom:1px solid #343b34;color:#191e1c;max-width:365px}.ds-email-row input{font-family:Manrope,Arial,sans-serif;flex:1;min-width:0;border:0;border-radius:0;background:transparent;color:inherit;padding:12px 0 15px;font-size:13px}.ds-email-row input::placeholder{color:#454d45;opacity:1}.ds-email-row button{font-family:Manrope,Arial,sans-serif;border:0;border-radius:0;background:transparent;min-width:44px;min-height:44px;color:inherit;font-size:23px;cursor:pointer}.ds-email-row button:hover{background:rgb(255 255 255 / .25)}.ds-email-row button:active{transform:translateY(1px)}.ds-email-row input:focus-visible{outline:2px solid currentColor;outline-offset:5px}.ds-email-row button:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Header navigation",
+      "kind": "nav",
+      "description": "Compact central shop navigation.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#shop\">SHOP ALL <span aria-hidden=\"true\">\u2197</span></a></nav>",
+      "css": ".ds-nav{font-family:Manrope,Arial,sans-serif;font-size:11px}.ds-nav a{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.06em;color:var(--ink,#191a19);text-decoration:none}.ds-nav a:focus-visible{outline:2px solid currentColor;outline-offset:5px}"
+    },
+    {
+      "name": "Product card",
+      "kind": "card",
+      "description": "Frameless catalog card; snippet uses an explicit illustrative surface, not a product photograph.",
+      "html": "<a class=\"ds-card\" href=\"#product\"><div class=\"ds-card-image\" aria-label=\"Illustrative image surface\"><span>VIEW PIECE \u2197</span></div><div class=\"ds-card-meta\"><strong>SAMPLE PIECE</strong><span>\u20ac80.00</span><small>Neutral \u00b7 Sample</small></div></a>",
+      "css": ".ds-card{font-family:Manrope,Arial,sans-serif;display:block;max-width:280px;color:var(--ink,#191a19);text-decoration:none}.ds-card-image{aspect-ratio:4/5;background:#e8e8e5;position:relative;overflow:hidden}.ds-card-image>span{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:rgb(245 245 243 / .95);font-size:10px;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s}.ds-card:hover .ds-card-image>span,.ds-card:focus-visible .ds-card-image>span{opacity:1;transform:none}.ds-card-meta{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding-top:15px;font-size:10px;line-height:1.6}.ds-card-meta strong{font-weight:600}.ds-card-meta small{grid-column:1/-1;color:var(--muted,#62645f);font-size:10px}.ds-card:focus-visible{outline:2px solid currentColor;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-card-image>span{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Independent by nature",
+    "overview": "Sparse, neutral streetwear commerce shaped by the supplied references: generous imagery, compact uppercase information, and restrained controls. The supplied outaflow emblem remains the identity anchor; atmospheric landscape photography carries the opening screen.\n\nThis records the implemented reference-led direction. CODEX-INSTRUCTIONS.md and PRODUCT.md establish the brand asset and neutral streetwear constraints. Surface compositions are recorded in `.impeccable/surfaces/storefront.md`.",
+    "keyCharacteristics": [
+      "Warm neutral paper and dark ink",
+      "Self-hosted Manrope with compact commerce labels",
+      "Flat, square controls and image-led layouts",
+      "Restrained motion with reduced-motion support"
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the supplied outaflow emblem.",
+      "Do give imagery priority and keep commerce labels compact.",
+      "Do retain visible keyboard focus and reduced-motion support."
+    ],
+    "donts": [
+      "Don't copy Mertra branding or product artwork.",
+      "Don't present illustrative development photography as real outaflow products.",
+      "Don't introduce raised cards or rounded purchase controls into the current flat system."
+    ]
+  }
+}
