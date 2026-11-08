@@ -9,3 +9,5 @@ Authority: CODEX-INSTRUCTIONS.md, supplied screenshots in `reference/`, and the 
 Illustrative catalog photography is restricted to development preview and labeled as sample content. The user supplied jacket front/back photographs for every sample item; front is default and back is revealed on hover or keyboard focus. Reduced-motion disables animation and transitions.
 
 Header refinement: compact 48px row with HOME and SHOP centered and basket on the right; 28px slow announcement strip above. Announcement wording respects active/inactive release state. Empty cart uses a native popover and describes the existing direct checkout behavior.
+
+Closed-store update: only the supplied animated-logo video, OPENING SOON heading and email input on a seamless black canvas. Header, footer and atmospheric landscape removed from this state. Explicit consent is progressively disclosed during email entry.

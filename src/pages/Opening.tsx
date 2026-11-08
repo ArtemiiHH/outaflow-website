@@ -1,31 +1,37 @@
-import { useEffect } from "react";
-import { Header, Logo } from "../components/Layout";
+import { useEffect, useRef } from "react";
 import Signup from "../components/Signup";
+
 export default function Opening() {
+  const video = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     document.title = "outaflow | Opening soon";
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      if (!video.current) return;
+      if (preference.matches) video.current.pause();
+      else void video.current.play().catch(() => {});
+    };
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
   }, []);
   return (
-    <div className="opening">
-      <div className="landscape" aria-hidden="true" />
-      <Header opening />
+    <div className="opening opening-minimal">
       <main id="main" className="opening-main">
-        <div className="rotating-mark">
-          <Logo />
-        </div>
+        <video
+          ref={video}
+          className="opening-video"
+          src="/videos/outaflow-logo-animation.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Animated outaflow logo"
+        />
         <h1>OPENING SOON</h1>
-        <p className="opening-copy">
-          A new form of everyday.
-          <br />
-          Be there for the first drop.
-        </p>
-        <Signup />
+        <Signup minimal />
       </main>
-      <footer className="opening-footer">
-        <span>© {new Date().getFullYear()} outaflow</span>
-        <span>Good things take their own time.</span>
-        <span>Est. independent</span>
-      </footer>
     </div>
   );
 }

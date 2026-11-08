@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Check } from "@phosphor-icons/react";
-export default function Signup() {
+export default function Signup({ minimal = false }: { minimal?: boolean }) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<
@@ -50,7 +50,9 @@ export default function Signup() {
     );
   return (
     <form className="signup" onSubmit={submit} noValidate>
-      <label htmlFor="email">Get the first word.</label>
+      <label htmlFor="email" className={minimal ? "sr-only" : undefined}>
+        {minimal ? "Email address" : "Get the first word."}
+      </label>
       <div className="email-row">
         <input
           id="email"
@@ -60,6 +62,7 @@ export default function Signup() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           aria-describedby="signup-message"
+          title={!endpoint ? "Email signup opens soon" : undefined}
           required
           disabled={status === "loading"}
         />
@@ -73,21 +76,23 @@ export default function Signup() {
           {status === "loading" ? "Sending…" : <ArrowUpRight size={23} />}
         </button>
       </div>
-      <label className="consent">
-        <input
-          type="checkbox"
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          required
-          disabled={status === "loading"}
-        />
-        <span>
-          I agree to receive outaflow drop updates by email. Unsubscribe
-          anytime.
-        </span>
-      </label>
+      {(!minimal || email.length > 0 || status === "error") && (
+        <label className="consent">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            required
+            disabled={status === "loading"}
+          />
+          <span>
+            I agree to receive outaflow drop updates by email. Unsubscribe
+            anytime.
+          </span>
+        </label>
+      )}
       <p id="signup-message" className="form-message" role="status">
-        {message || (!endpoint ? "Email signup opens soon." : "")}
+        {message || (!minimal && !endpoint ? "Email signup opens soon." : "")}
       </p>
     </form>
   );

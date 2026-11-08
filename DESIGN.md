@@ -148,3 +148,7 @@ Controls are square and image frames remain rectangular. Selected sizes invert t
 ## Compact storefront header
 
 The header now follows the user's supplied narrow navigation reference: 48px navigation row, wordmark left, centered HOME/SHOP links without dropdowns, and a 44px basket control right. A 28px announcement strip repeats “NEW DROP ONLINE NOW” during active drops and “NEXT DROP COMING SOON” between releases. Two identical groups translate by half their combined width over 65 seconds for a seamless loop. Hover pauses the strip and reduced-motion disables it. The basket opens a native, dismissible empty-cart popover; purchases still use the existing direct Shopify checkout flow.
+
+## Closed-store simplification
+
+The closed-store page supersedes the atmospheric opening direction: solid black canvas matching the supplied MP4, centered looping `public/videos/outaflow-logo-animation.mp4`, compact OPENING SOON heading and underlined email field. No header, announcement, footer, landscape, tagline or introductory copy. The email label is visually hidden; consent appears once an email is entered, and submission feedback appears only when needed. Reduced-motion pauses the actual video rather than merely disabling CSS animation.

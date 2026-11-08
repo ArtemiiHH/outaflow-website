@@ -14,6 +14,10 @@ for (const viewport of [
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("http://127.0.0.1:4173");
     await page.evaluate(() => document.fonts.ready);
+    await expect(page.locator(".opening video")).toBeVisible();
+    await expect(
+      page.locator(".opening header, .opening footer, .opening .landscape"),
+    ).toHaveCount(0);
     await expect(
       page.getByRole("button", { name: "Email signup opens soon" }),
     ).toBeDisabled();
