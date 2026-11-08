@@ -11,3 +11,5 @@ Illustrative catalog photography is restricted to development preview and labele
 Header refinement: compact 48px row with HOME and SHOP centered and basket on the right; 28px slow announcement strip above. Announcement wording respects active/inactive release state. Empty cart uses a native popover and describes the existing direct checkout behavior.
 
 Closed-store update: only the supplied animated-logo video, OPENING SOON heading and email input on a seamless black canvas. Header, footer and atmospheric landscape removed from this state. Explicit consent is progressively disclosed during email entry.
+
+Background update: user-supplied Originkit Chromatic Waves, full-bleed OGL halftone animation behind the existing minimal content. White dots on black; the video blends over the effect. No new visible copy or controls.

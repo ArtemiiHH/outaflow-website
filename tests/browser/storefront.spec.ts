@@ -227,3 +227,35 @@ test("scheduled drop starts without refresh", async ({ page }) => {
   await page.clock.fastForward(3000);
   await expect(page.locator(".product-card")).toHaveCount(1);
 });
+
+test("waves render, animate, and fall back when WebGL is unavailable", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("http://127.0.0.1:4173");
+  const canvas = page.locator(".chromatic-waves canvas");
+  await expect(canvas).toBeVisible();
+  const first = await canvas.screenshot();
+  await page.waitForTimeout(700);
+  const second = await canvas.screenshot();
+  expect(first.equals(second)).toBe(false);
+  expect(errors).toEqual([]);
+  await page.addInitScript(() => {
+    const original = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (
+      type: string,
+      ...args: any[]
+    ) {
+      if (type.includes("webgl")) return null;
+      return original.apply(this, [type, ...args] as any);
+    } as typeof original;
+  });
+  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "OPENING SOON" }),
+  ).toBeVisible();
+  await expect(page.getByRole("textbox")).toBeVisible();
+  await expect(page.locator(".chromatic-waves canvas")).toHaveCount(0);
+  expect(errors).toEqual([]);
+});

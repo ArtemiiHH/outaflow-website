@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Signup from "../components/Signup";
+import ChromaticWaves from "../components/ChromaticWaves";
 
 export default function Opening() {
   const video = useRef<HTMLVideoElement>(null);
@@ -17,6 +18,7 @@ export default function Opening() {
   }, []);
   return (
     <div className="opening opening-minimal">
+      <ChromaticWaves />
       <main id="main" className="opening-main">
         <video
           ref={video}

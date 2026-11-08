@@ -152,3 +152,7 @@ The header now follows the user's supplied narrow navigation reference: 48px nav
 ## Closed-store simplification
 
 The closed-store page supersedes the atmospheric opening direction: solid black canvas matching the supplied MP4, centered looping `public/videos/outaflow-logo-animation.mp4`, compact OPENING SOON heading and underlined email field. No header, announcement, footer, landscape, tagline or introductory copy. The email label is visually hidden; consent appears once an email is entered, and submission feedback appears only when needed. Reduced-motion pauses the actual video rather than merely disabling CSS animation.
+
+## Chromatic Waves background
+
+The user-supplied Originkit Chromatic Waves shader now fills the closed-store backdrop behind all content. OGL renders simplex-noise and halftone passes using the supplied preset (speed 1, cell size 10, gamma 8, palette bias -2, white palette on black). The supplied video uses screen blending to let the waves continue behind its black ground. Animation is capped at 30fps with DPR capped at 2; hidden tabs pause and reduced-motion renders a static frame. Unsupported/lost WebGL leaves the black background intact. Resize and unmount clean up observers, listeners, frame callbacks and GPU resources.
